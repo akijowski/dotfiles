@@ -1,0 +1,18 @@
+packages:
+  darwin:
+    brews:
+      - 'bash'
+      - 'fzf'
+      - 'git'
+      - 'go-task'
+      - 'jq'
+      - 'tmux'
+      - 'tree'
+    casks:
+      - '1password'
+      - 'wezterm'
+      - 'font-space-mono-nerd-font'
+      - 'visual-studio-code'
+      - 'discord'
+      - 'balenaetcher'
+      - 'prusaslicer'

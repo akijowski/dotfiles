@@ -2,6 +2,7 @@ packages:
   darwin:
     brews:
       - 'bash'
+      - 'chezmoi'
       - 'fzf'
       - 'git'
       - 'go-task'
@@ -10,6 +11,8 @@ packages:
       - 'tree'
     casks:
       - '1password'
+      - '1password-cli'
+      - 'git-credential-manager'
       - 'wezterm'
       - 'font-space-mono-nerd-font'
       - 'visual-studio-code'

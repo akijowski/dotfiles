@@ -1,0 +1,16 @@
+[core]
+
+[user]
+email = "agkijow@gmail.com"
+name = "Adam Kijowski"
+
+[init]
+defaultBranch = "main"
+
+[credential]
+{{- if eq .chezmoi.os "darwin" }}
+helper = "osxkeychain"
+{{- end }}
+
+[gpg]
+format = "ssh"

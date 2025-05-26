@@ -1,0 +1,23 @@
+#!/usr/bin/env
+
+# This file will be loaded every time you open a new shell.
+# It should only have environment variables you want
+# loaded every time you open a new shell.
+#
+# If you want to add any additional customizations (example: oh-my-zsh)
+# consider keeping it in your .zshrc file (you can create one).
+#
+# Additional information: http://zsh.sourceforge.net/Intro/intro_3.html
+
+export XDG_CONFIG_HOME=$HOME/.config
+
+export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
+
+if [ -n $(command -v fzf) ] && [ -f $HOME/.fzfrc ]; then
+    export FZF_DEFAULT_OPTS_FILE=$HOME/.fzfrc
+    export FZF_DEFAULT_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+    export FZF_ALT_C_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+    export FZF_CTRL_T_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+fi
+
+export OMP_CONFIG="/opt/homebrew/opt/oh-my-posh/themes/space.omp.json"

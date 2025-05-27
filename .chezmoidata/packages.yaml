@@ -12,7 +12,6 @@ packages:
     casks:
       - '1password'
       - '1password-cli'
-      - 'git-credential-manager'
       - 'wezterm'
       - 'font-space-mono-nerd-font'
       - 'visual-studio-code'

@@ -20,4 +20,3 @@ if [ -n $(command -v fzf) ] && [ -f $HOME/.fzfrc ]; then
     export FZF_CTRL_T_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
 fi
 
-export OMP_CONFIG="/opt/homebrew/opt/oh-my-posh/themes/space.omp.json"

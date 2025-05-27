@@ -134,3 +134,6 @@ if [[ ! -L "$HOME/.1password/agent.sock" ]]; then
     ln -s "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
 fi
 
+# starship
+eval "$(starship init zsh)"
+

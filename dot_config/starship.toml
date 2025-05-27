@@ -1,0 +1,8 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[cmd_duration]
+min_time = 500
+show_milliseconds = true
+
+[directory]
+fish_style_pwd_dir_length = 2

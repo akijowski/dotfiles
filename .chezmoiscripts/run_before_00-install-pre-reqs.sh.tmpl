@@ -12,6 +12,7 @@ if [[ -e "/opt/homebrew/bin/brew" && ! $(command -v brew) ]]; then
     echo >> /Users/adam/.zprofile
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/adam/.zprofile
     echo "Added Homebrew to zprofile. Adding to current shell"
+    # TODO: Fix this. It does not work properly on a fresh install. Looks like the eval script is not working?
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 {{ end }}

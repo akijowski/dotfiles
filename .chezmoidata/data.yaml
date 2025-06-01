@@ -1,0 +1,5 @@
+data:
+  git:
+    enforceSSH: true
+    email: "agkijow@gmail.com"
+    name: "Adam Kijowski"

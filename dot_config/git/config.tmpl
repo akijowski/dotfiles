@@ -1,8 +1,13 @@
 [core]
 
 [user]
-email = "agkijow@gmail.com"
-name = "Adam Kijowski"
+email = {{ .data.git.email | quote }}
+name = {{ .data.git.name | quote }}
+
+{{ if .data.git.enforceSSH -}}
+[url "ssh://git@github.com/"]
+insteadOf = https://github.com/
+{{- end }}
 
 [init]
 defaultBranch = "main"

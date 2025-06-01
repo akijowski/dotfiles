@@ -1,0 +1,10 @@
+{{- with .aws.config -}}
+[default]
+region = {{ .default.region }}
+output = {{ .default.output }}
+{{ range .users -}}
+[profile {{ .profile }}]
+region = {{ .region }}
+output = {{ .output }}
+{{ end -}}
+{{ end -}}

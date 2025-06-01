@@ -1,6 +1,0 @@
-[default]
-region = us-east-2
-output = json
-[profile adam]
-region = us-east-2
-output = json

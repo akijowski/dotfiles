@@ -1,0 +1,9 @@
+aws:
+  config:
+    default:
+      region: us-east-2
+      output: json
+    users:
+      - profile: adam
+        region: us-east-2
+        output: json

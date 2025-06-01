@@ -3,7 +3,9 @@
 {{ if eq .chezmoi.os "darwin" }}
 
 if [[ ! $(command -v brew) ]]; then
+    echo "######"
     echo "🍺  Installing Homebrew"
+    echo "######"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
@@ -12,7 +14,7 @@ if [[ -e "/opt/homebrew/bin/brew" && ! $(command -v brew) ]]; then
     echo >> /Users/adam/.zprofile
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>/Users/adam/.zprofile
     echo "Added Homebrew to zprofile. Adding to current shell"
-    # TODO: Fix this. It does not work properly on a fresh install. Looks like the eval script is not working?
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    #eval "$(/opt/homebrew/bin/brew shellenv)"
+    source /Users/adam/.zprofile
 fi
 {{ end }}

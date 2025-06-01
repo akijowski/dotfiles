@@ -11,3 +11,8 @@
   exact: true
   stripComponents: 1
   refreshPeriod: 168h
+  include:
+    - "*/*.zsh"
+    - "*/.version"
+    - "*/.revision-hash"
+    - "*/highlighters/**"

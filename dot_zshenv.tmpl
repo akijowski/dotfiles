@@ -11,12 +11,15 @@
 
 export XDG_CONFIG_HOME=$HOME/.config
 
+{{ if (mustHas "1password" .packages.darwin.casks) -}}
 export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
+{{- end }}
 
+{{ if (mustHas "fzf" .packages.darwin.brews) -}}
 if [ -n $(command -v fzf) ] && [ -f $HOME/.fzfrc ]; then
     export FZF_DEFAULT_OPTS_FILE=$HOME/.fzfrc
     export FZF_DEFAULT_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
     export FZF_ALT_C_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
     export FZF_CTRL_T_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
 fi
-
+{{- end }}

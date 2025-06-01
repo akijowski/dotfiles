@@ -15,6 +15,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
 {{- end }}
 
+{{ if (mustHas "tmux-sessionizer" .packages.darwin.brews) -}}
+export TMS_CONFIG_FILE=$HOME/.config/tms/config.toml
+{{- end }}
+
 {{ if (mustHas "fzf" .packages.darwin.brews) -}}
 if [ -n $(command -v fzf) ] && [ -f $HOME/.fzfrc ]; then
     export FZF_DEFAULT_OPTS_FILE=$HOME/.fzfrc

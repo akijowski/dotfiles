@@ -1,21 +1,35 @@
 [core]
+    pager = delta
 
 [user]
-email = {{ .data.git.email | quote }}
-name = {{ .data.git.name | quote }}
+    email = {{ .data.git.email | quote }}
+    name = {{ .data.git.name | quote }}
 
 {{ if .data.git.enforceSSH -}}
 [url "ssh://git@github.com/"]
-insteadOf = https://github.com/
+    insteadOf = https://github.com/
 {{- end }}
 
 [init]
-defaultBranch = "main"
+    defaultBranch = "main"
 
 [credential]
 {{- if eq .chezmoi.os "darwin" }}
-helper = "osxkeychain"
+    helper = "osxkeychain"
 {{- end }}
 
 [gpg]
-format = "ssh"
+    format = "ssh"
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    hyperlinks = true
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+
+[merge]
+    conflictstyle = zdiff3

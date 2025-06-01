@@ -5,11 +5,13 @@ packages:
       - 'chezmoi'
       - 'fzf'
       - 'git'
+      - 'git-delta'
       - 'go-task'
       - 'jq'
       - 'pre-commit'
       - 'starship'
       - 'tmux'
+      - 'tmux-sessionizer'
       - 'tree'
     casks:
       - '1password'

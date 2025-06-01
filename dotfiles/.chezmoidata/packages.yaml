@@ -7,6 +7,7 @@ packages:
       - 'git'
       - 'go-task'
       - 'jq'
+      - 'pre-commit'
       - 'starship'
       - 'tmux'
       - 'tree'

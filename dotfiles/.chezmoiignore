@@ -1,0 +1,7 @@
+.DS_Store
+README.md
+
+# https://github.com/twpayne/chezmoi/discussions/1935
+.oh-my-zsh/cache
+.oh-my-zsh/cache/**
+.oh-my-zsh/**/*.zwc

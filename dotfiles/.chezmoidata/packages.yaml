@@ -1,7 +1,10 @@
 packages:
   darwin:
+    taps:
+      - philocalyst/tap
     brews:
       - 'bash'
+      - 'caligula' # philocalyst/tap
       - 'chezmoi'
       - 'fzf'
       - 'git'

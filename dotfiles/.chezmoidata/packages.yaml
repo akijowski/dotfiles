@@ -27,3 +27,5 @@ packages:
       - 'balenaetcher'
       - 'prusaslicer'
       - 'vivaldi'
+    vscode:
+      - 'golang.go'

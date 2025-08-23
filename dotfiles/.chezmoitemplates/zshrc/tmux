@@ -1,0 +1,5 @@
+{{ if (mustHas "tmux-sessionizer" .packages.darwin.brews) -}}
+if [[ $(command -v tms) ]]; then
+    source <(COMPLETE=zsh tms)
+fi
+{{- end }}

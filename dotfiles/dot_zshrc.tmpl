@@ -4,41 +4,8 @@
 #source ~/.zsh_functions
 eval "$(ssh-agent -s > /dev/null)"
 
-# Autoload functions
-# https://htr3n.github.io/2018/07/faster-zsh/
-# https://zsh.sourceforge.io/Doc/Release/Functions.html#Autoloading-Functions
-ZSHCONFIG=~/.zsh-config
-
-my_zsh_fpath=${ZSHCONFIG}/autoloaded
-
-fpath=($my_zsh_fpath $fpath)
-
-if [[ -d "$my_zsh_fpath" ]]; then
-    for func in $my_zsh_fpath/*; do
-        autoload -Uz ${func:t}
-    done
-fi
-unset my_zsh_fpath
-
-{{ if (mustHas "fzf" .packages.darwin.brews) -}}
-source <(fzf --zsh)
-{{- end }}
-
-{{ if (mustHas "tmux-sessionizer" .packages.darwin.brews) -}}
-if [[ $(command -v tms) ]]; then
-    source <(COMPLETE=zsh tms)
-fi
-{{- end }}
-
-{{ if (mustHas "1password" .packages.darwin.casks) -}}
-# https://developer.1password.com/docs/ssh/get-started/#step-4-configure-your-ssh-or-git-client
-if [[ ! -L "$HOME/.1password/agent.sock" ]]; then
-    mkdir -p "$HOME/.1password"
-    ln -s "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
-fi
-{{- end }}
-
-{{ if (mustHas "starship" .packages.darwin.brews) -}}
-# starship
-eval "$(starship init zsh)"
-{{- end }}
+{{ includeTemplate "zshrc/autoload" . }}
+{{ includeTemplate "zshrc/fzf" . }}
+{{ includeTemplate "zshrc/tmux" . }}
+{{ includeTemplate "zshrc/1pass" . }}
+{{ includeTemplate "zshrc/starship" . }}

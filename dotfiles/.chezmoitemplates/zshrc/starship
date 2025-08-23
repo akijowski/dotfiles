@@ -1,0 +1,4 @@
+{{ if (mustHas "starship" .packages.darwin.brews) -}}
+# starship
+eval "$(starship init zsh)"
+{{- end }}

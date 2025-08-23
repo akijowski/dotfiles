@@ -1,0 +1,15 @@
+# Autoload functions
+# https://htr3n.github.io/2018/07/faster-zsh/
+# https://zsh.sourceforge.io/Doc/Release/Functions.html#Autoloading-Functions
+ZSHCONFIG=~/.zsh-config
+
+my_zsh_fpath=${ZSHCONFIG}/autoloaded
+
+fpath=($my_zsh_fpath $fpath)
+
+if [[ -d "$my_zsh_fpath" ]]; then
+    for func in $my_zsh_fpath/*; do
+        autoload -Uz ${func:t}
+    done
+fi
+unset my_zsh_fpath

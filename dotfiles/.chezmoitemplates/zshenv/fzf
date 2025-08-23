@@ -1,0 +1,8 @@
+{{ if (mustHas "fzf" .packages.darwin.brews) -}}
+if [ -n $(command -v fzf) ] && [ -f $HOME/.fzfrc ]; then
+    export FZF_DEFAULT_OPTS_FILE=$HOME/.fzfrc
+    #export FZF_DEFAULT_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+    #export FZF_ALT_C_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+    #export FZF_CTRL_T_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+fi
+{{- end }}

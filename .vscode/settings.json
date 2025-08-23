@@ -2,6 +2,7 @@
     "editor.tabSize": 2,
     "files.associations": {
         ".chezmoiremove": "plaintext",
-        ".chezmoiignore": "plaintext"
+        ".chezmoiignore": "plaintext",
+        "**/.chezmoitemplates/**/*": "gotmpl"
     }
 }

@@ -4,6 +4,7 @@
 #source ~/.zsh_functions
 eval "$(ssh-agent -s > /dev/null)"
 
+{{ includeTemplate "zshrc/aliases" . }}
 {{ includeTemplate "zshrc/autoload" . }}
 {{ includeTemplate "zshrc/fzf" . }}
 {{ includeTemplate "zshrc/tmux" . }}

@@ -10,8 +10,14 @@
     insteadOf = https://github.com/
 {{- end }}
 
+[github]
+    user = akijowski
+
 [init]
     defaultBranch = "main"
+
+[pull]
+    rebase = false
 
 [credential]
 {{- if eq .chezmoi.os "darwin" }}

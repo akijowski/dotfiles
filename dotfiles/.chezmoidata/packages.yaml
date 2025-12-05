@@ -7,6 +7,7 @@ packages:
       - 'caligula' # philocalyst/tap
       - 'chezmoi'
       - 'fzf'
+      - 'gh'
       - 'git'
       - 'git-delta'
       - 'go-task'

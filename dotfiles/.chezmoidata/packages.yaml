@@ -27,6 +27,7 @@ packages:
       - 'discord'
       - 'balenaetcher'
       - 'prusaslicer'
+      - 'tailscale-app'
       - 'vivaldi'
     vscode:
       - 'golang.go'

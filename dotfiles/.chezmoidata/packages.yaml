@@ -14,7 +14,6 @@ packages:
       - 'jq'
       - 'pre-commit'
       - 'starship'
-      - 'tailscale'
       - 'tmux'
       - 'tmux-sessionizer'
       - 'tree'

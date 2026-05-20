@@ -1,8 +1,41 @@
 {{ if (mustHas "fzf" .packages.darwin.brews) -}}
+# FZF
 if [ -n $(command -v fzf) ] && [ -f $HOME/.fzfrc ]; then
-    export FZF_DEFAULT_OPTS_FILE=$HOME/.fzfrc
-    #export FZF_DEFAULT_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
-    #export FZF_ALT_C_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
-    #export FZF_CTRL_T_COMMAND="find . -type d ( -path .git -o -path node_modules ) -prune"
+    #export FZF_DEFAULT_OPTS_FILE=$HOME/.fzfrc
+
+    # Tokyo Night Storm colors for fzf
+    fzf_fg="#c0caf5"
+    fzf_bg="#1a1b26"
+    fzf_hl="#bb9af7"
+    fzf_fg_plus="#c0caf5"
+    fzf_bg_plus="#292e42"
+    fzf_hl_plus="#7dcfff"
+    fzf_info="#7aa2f7"
+    fzf_prompt="#7dcfff"
+    fzf_pointer="#ff007c"
+    fzf_marker="#9ece6a"
+    fzf_spinner="#9ece6a"
+    fzf_header="#9ece6a"
+    # FZF
+    export FZF_DEFAULT_OPTS=" \
+    --height 35% \
+    --border \
+    --info=inline \
+    --color=fg:${fzf_fg},bg:${fzf_bg},hl:${fzf_hl} \
+    --color=fg+:${fzf_fg_plus},bg+:${fzf_bg_plus},hl+:${fzf_hl_plus} \
+    --color=info:${fzf_info},prompt:${fzf_prompt},pointer:${fzf_pointer} \
+    --color=marker:${fzf_marker},spinner:${fzf_spinner},header:${fzf_header}"
+
+    unset fzf_fg fzf_bg fzf_hl fzf_fg_plus fzf_bg_plus fzf_hl_plus
+    unset fzf_info fzf_prompt fzf_pointer fzf_marker fzf_spinner fzf_header
+
+    # Use fd for file searching (respects .gitignore, faster than find)
+    export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+    # Preview file contents with bat when using Ctrl+t
+    export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :200 {} 2>/dev/null || cat {}'"
+    # Preview directory contents when using Alt+c
+    export FZF_ALT_C_OPTS="--preview 'ls -la {}'"
 fi
 {{- end }}

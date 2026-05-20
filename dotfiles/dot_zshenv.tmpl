@@ -11,6 +11,9 @@
 
 export XDG_CONFIG_HOME=$HOME/.config
 
+# Ctrl-x, Ctrl-e opens a vim buffer for writing multi-line terminal commands
+export EDITOR=vim
+
 {{ includeTemplate "zshenv/onepass" . }}
 {{ includeTemplate "zshenv/tmux" . }}
 {{ includeTemplate "zshenv/fzf" . }}

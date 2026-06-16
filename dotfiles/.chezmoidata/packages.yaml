@@ -1,11 +1,11 @@
 packages:
   darwin:
-    taps:
-      - philocalyst/tap
+    taps: {}
+    #   - philocalyst/tap
     brews:
       - 'bash'
       - 'bat' # better cat
-      - 'caligula' # philocalyst/tap
+      # - 'caligula' # philocalyst/tap
       - 'chezmoi'
       - 'fd' # better find
       - 'fzf'
@@ -16,7 +16,7 @@ packages:
       - 'jq'
       - 'podman'
       - 'podman-compose'
-      - 'podman-tui'
+      # - 'podman-tui'
       - 'pre-commit'
       - 'starship'
       - 'tmux'
@@ -32,6 +32,7 @@ packages:
       - 'discord'
       - 'balenaetcher'
       - 'prusaslicer'
+      - 'podman-desktop'
       - 'tailscale-app'
       - 'vivaldi'
     vscode:

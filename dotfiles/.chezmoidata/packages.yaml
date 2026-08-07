@@ -26,6 +26,8 @@ packages:
       - '1password'
       - '1password-cli'
       - 'wezterm'
+      - 'ghostty'
+      - 'epilogue-playback'
       - 'font-space-mono-nerd-font'
       - 'rectangle'
       - 'visual-studio-code'
